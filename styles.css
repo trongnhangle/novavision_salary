@@ -1,0 +1,1313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --neo-black: #000000;
+    --neo-white: #FFFFFF;
+    --neo-yellow: #FFFF00;
+    --neo-red: #FF0000;
+    --neo-blue: #0066FF;
+    --neo-green: #00FF00;
+    --neo-purple: #FF00FF;
+    --neo-orange: #FF6600;
+    --neo-gray: #808080;
+    --neo-light-gray: #F0F0F0;
+    --neo-shadow: 6px 6px 0px var(--neo-black);
+    --neo-shadow-large: 12px 12px 0px var(--neo-black);
+    --neo-shadow-small: 3px 3px 0px var(--neo-black);
+}
+
+body {
+    font-family: 'Space Grotesk', 'JetBrains Mono', monospace;
+    background: var(--neo-white);
+    min-height: 100vh;
+    color: var(--neo-black);
+    font-weight: 600;
+    line-height: 1.2;
+    overflow-x: hidden;
+}
+
+.neo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-large);
+    position: relative;
+}
+
+.neo-header {
+    background: var(--neo-yellow);
+    border-bottom: 4px solid var(--neo-black);
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.neo-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.neo-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--neo-black);
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+    text-shadow: 4px 4px 0px var(--neo-white);
+}
+
+.neo-subtitle-block {
+    background: var(--neo-black);
+    padding: 12px 20px;
+    border: 3px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-small);
+    display: inline-block;
+    transform: rotate(-2deg);
+}
+
+.neo-subtitle {
+    color: var(--neo-yellow);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.neo-header-decoration {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--neo-red);
+    border: 4px solid var(--neo-black);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.neo-main {
+    padding: 40px 30px;
+    background: var(--neo-light-gray);
+    border-bottom: 4px solid var(--neo-black);
+}
+
+.neo-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.neo-revenue-block {
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow);
+    padding: 30px;
+}
+
+.neo-label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--neo-black);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+}
+
+.neo-input-wrapper {
+    position: relative;
+}
+
+.neo-input {
+    width: 100%;
+    padding: 20px 24px;
+    border: 4px solid var(--neo-black);
+    background: var(--neo-white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--neo-black);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.neo-input:focus {
+    background: var(--neo-yellow);
+    transform: translate(-3px, -3px);
+}
+
+.neo-input-shadow {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: -4px;
+    bottom: -4px;
+    background: var(--neo-black);
+    z-index: -1;
+}
+
+.neo-members-section {
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow);
+    padding: 30px;
+}
+
+.neo-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.neo-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--neo-black);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.neo-btn {
+    position: relative;
+    border: 4px solid var(--neo-black);
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0.05em;
+    background: var(--neo-white);
+    color: var(--neo-black);
+}
+
+.neo-btn:hover {
+    transform: translate(-3px, -3px);
+}
+
+.neo-btn:active {
+    transform: translate(0, 0);
+}
+
+.neo-btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.neo-btn-shadow {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: -4px;
+    bottom: -4px;
+    background: var(--neo-black);
+    z-index: -1;
+}
+
+.neo-btn-add {
+    background: var(--neo-green);
+    color: var(--neo-black);
+}
+
+.neo-btn-primary {
+    background: var(--neo-blue);
+    color: var(--neo-white);
+    font-size: 1.3rem;
+    padding: 20px 32px;
+}
+
+.neo-btn-secondary {
+    background: var(--neo-purple);
+    color: var(--neo-white);
+}
+
+.neo-btn-export {
+    background: var(--neo-orange);
+    color: var(--neo-black);
+}
+
+.neo-action-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.neo-members-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.neo-member-card {
+    background: var(--neo-light-gray);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-small);
+    padding: 25px;
+    position: relative;
+}
+
+.neo-member-card:nth-child(even) {
+    background: var(--neo-yellow);
+}
+
+.neo-member-card:nth-child(3n) {
+    background: var(--neo-white);
+}
+
+.neo-member-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.neo-member-number {
+    background: var(--neo-black);
+    color: var(--neo-white);
+    padding: 10px 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid var(--neo-black);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+.neo-remove-btn {
+    background: var(--neo-red);
+    color: var(--neo-white);
+    border: 3px solid var(--neo-black);
+    padding: 8px 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.neo-remove-btn:hover {
+    background: var(--neo-black);
+    transform: scale(1.1);
+}
+
+.neo-member-inputs {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: end;
+}
+
+.neo-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.neo-input-group label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--neo-black);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.neo-input-group input {
+    padding: 14px 18px;
+    border: 3px solid var(--neo-black);
+    background: var(--neo-white);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--neo-black);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.neo-input-group input:focus {
+    background: var(--neo-yellow);
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 0px var(--neo-black);
+}
+
+.neo-results-section {
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-large);
+    margin: 40px 0;
+}
+
+.neo-results-header {
+    background: var(--neo-red);
+    border-bottom: 4px solid var(--neo-black);
+    padding: 20px 30px;
+}
+
+.neo-results-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--neo-white);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    text-shadow: 3px 3px 0px var(--neo-black);
+}
+
+.neo-results-container {
+    padding: 30px;
+    background: var(--neo-light-gray);
+}
+
+.neo-result-item {
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-small);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.neo-result-item:nth-child(even) {
+    background: var(--neo-yellow);
+}
+
+.neo-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.neo-result-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--neo-black);
+    text-transform: uppercase;
+}
+
+.neo-result-salary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--neo-red);
+    font-family: 'JetBrains Mono', monospace;
+    text-shadow: 2px 2px 0px var(--neo-white);
+}
+
+.neo-result-details {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--neo-gray);
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 10px;
+}
+
+.neo-summary {
+    background: var(--neo-black);
+    padding: 30px;
+    border-top: 4px solid var(--neo-black);
+}
+
+.neo-summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--neo-gray);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.neo-summary-item:last-child {
+    border-bottom: none;
+}
+
+.neo-summary-profit {
+    background: var(--neo-green);
+    margin: 20px -30px -30px -30px;
+    padding: 20px 30px;
+    border-top: 4px solid var(--neo-black);
+}
+
+.neo-summary-profit .neo-summary-label,
+.neo-summary-profit .neo-summary-value {
+    color: var(--neo-black);
+}
+
+.neo-summary-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--neo-white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.neo-summary-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--neo-yellow);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.neo-export-section {
+    padding: 30px;
+    text-align: center;
+    background: var(--neo-white);
+    border-top: 4px solid var(--neo-black);
+}
+
+.neo-history-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.neo-history-section.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.neo-history-header {
+    background: var(--neo-purple);
+    border-bottom: 4px solid var(--neo-black);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.neo-history-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--neo-white);
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px var(--neo-black);
+}
+
+.neo-history-content {
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-large);
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.neo-history-container {
+    padding: 30px;
+    background: var(--neo-light-gray);
+}
+
+.neo-history-item {
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-small);
+    padding: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.neo-history-item:hover {
+    transform: translate(-3px, -3px);
+    background: var(--neo-yellow);
+}
+
+.neo-history-item:nth-child(even) {
+    background: var(--neo-light-gray);
+}
+
+/* MODAL */
+.neo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.neo-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.neo-modal-content {
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow-large);
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 100%;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.neo-modal.show .neo-modal-content {
+    transform: scale(1);
+}
+
+.neo-modal-header {
+    background: var(--neo-blue);
+    border-bottom: 4px solid var(--neo-black);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.neo-modal-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--neo-white);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--neo-black);
+}
+
+.neo-modal-body {
+    padding: 30px;
+    background: var(--neo-light-gray);
+}
+
+/* CLOSE BUTTON */
+.neo-close-btn {
+    background: var(--neo-red);
+    color: var(--neo-white);
+    border: 3px solid var(--neo-black);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.neo-close-btn:hover {
+    background: var(--neo-black);
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* FOOTER */
+.neo-footer {
+    background: var(--neo-black);
+    border-top: 4px solid var(--neo-black);
+    padding: 30px;
+    text-align: center;
+}
+
+.neo-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.neo-footer-text {
+    color: var(--neo-white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 0px var(--neo-red);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
+    .neo-container {
+        margin: 0;
+        border-width: 3px;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .neo-header {
+        padding: 25px 20px;
+    }
+    
+    .neo-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin-bottom: 12px;
+    }
+    
+    .neo-subtitle {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .neo-header-decoration {
+        width: 80px;
+        height: 80px;
+        right: -20px;
+    }
+    
+    .neo-main {
+        padding: 25px 20px;
+    }
+    
+    .neo-form-section {
+        gap: 30px;
+    }
+    
+    .neo-revenue-block,
+    .neo-members-section {
+        padding: 20px;
+        border-width: 3px;
+    }
+    
+    .neo-label {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .neo-input {
+        padding: 16px 18px;
+        font-size: 1rem;
+    }
+    
+    .neo-section-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .neo-section-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    .neo-action-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .neo-member-inputs {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .neo-member-card {
+        padding: 20px;
+        border-width: 3px;
+    }
+    
+    .neo-member-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .neo-member-number {
+        text-align: center;
+        padding: 8px 14px;
+    }
+    
+    .neo-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .neo-btn-primary {
+        padding: 18px 24px;
+        font-size: 1.2rem;
+    }
+    
+    .neo-result-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .neo-result-name-with-avatar {
+        justify-content: center;
+    }
+    
+    .neo-result-name {
+        font-size: 1.2rem;
+    }
+    
+    .neo-result-salary {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .neo-summary-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+        padding: 12px 0;
+    }
+    
+    .neo-summary-label {
+        font-size: 1rem;
+    }
+    
+    .neo-summary-value {
+        font-size: 1.1rem;
+    }
+    
+    .neo-history-content {
+        max-height: 90vh;
+        margin: 5px;
+        border-width: 3px;
+    }
+    
+    .neo-history-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .neo-history-title {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .neo-close-btn {
+        align-self: center;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .neo-history-container {
+        padding: 20px;
+    }
+    
+    .neo-history-item {
+        padding: 20px;
+        border-width: 3px;
+    }
+    
+    .neo-history-item-header {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .neo-history-month {
+        font-size: 1.2rem;
+    }
+    
+    .neo-modal-content {
+        margin: 5px;
+        max-height: 90vh;
+        border-width: 3px;
+    }
+    
+    .neo-modal-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .neo-modal-title {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    .neo-modal-body {
+        padding: 20px;
+    }
+    
+    .neo-footer {
+        padding: 20px;
+    }
+    
+    .neo-footer-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .neo-container {
+        border: none;
+    }
+    
+    .neo-header {
+        padding: 20px 15px;
+    }
+    
+    .neo-title {
+        font-size: 1.8rem;
+        text-shadow: 2px 2px 0px var(--neo-white);
+    }
+    
+    .neo-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .neo-header-decoration {
+        display: none;
+    }
+    
+    .neo-main {
+        padding: 20px 15px;
+    }
+    
+    .neo-form-section {
+        gap: 25px;
+    }
+    
+    .neo-revenue-block,
+    .neo-members-section {
+        padding: 15px;
+        border-width: 2px;
+        box-shadow: 3px 3px 0px var(--neo-black);
+    }
+    
+    .neo-section-title {
+        font-size: 1.4rem;
+    }
+    
+    .neo-label {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .neo-input {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+        border-width: 2px;
+    }
+    
+    .neo-member-card {
+        padding: 15px;
+        border-width: 2px;
+        box-shadow: 3px 3px 0px var(--neo-black);
+    }
+    
+    .neo-member-number {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .neo-btn {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+        border-width: 2px;
+        box-shadow: 3px 3px 0px var(--neo-black);
+    }
+    
+    .neo-btn:hover {
+        transform: translate(-2px, -2px);
+    }
+    
+    .neo-btn-primary {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+    }
+    
+    .neo-btn-shadow {
+        top: 2px;
+        left: 2px;
+        right: -2px;
+        bottom: -2px;
+    }
+    
+    .neo-results-section {
+        margin: 30px 0;
+    }
+    
+    .neo-results-header {
+        padding: 15px 20px;
+    }
+    
+    .neo-results-title {
+        font-size: 1.6rem;
+    }
+    
+    .neo-results-container {
+        padding: 20px;
+    }
+    
+    .neo-result-item {
+        padding: 15px;
+        border-width: 2px;
+        box-shadow: 3px 3px 0px var(--neo-black);
+    }
+    
+    .neo-result-name {
+        font-size: 1.1rem;
+    }
+    
+    .neo-result-salary {
+        font-size: 1.2rem;
+    }
+    
+    .neo-result-details {
+        font-size: 0.9rem;
+        margin-top: 8px;
+    }
+    
+    .neo-summary {
+        padding: 20px;
+    }
+    
+    .neo-summary-item {
+        padding: 10px 0;
+    }
+    
+    .neo-summary-label {
+        font-size: 0.9rem;
+    }
+    
+    .neo-summary-value {
+        font-size: 1rem;
+    }
+    
+    .neo-export-section {
+        padding: 20px;
+    }
+    
+    .neo-history-content {
+        margin: 0;
+        max-height: 95vh;
+        border-width: 2px;
+    }
+    
+    .neo-history-header {
+        padding: 12px 15px;
+    }
+    
+    .neo-history-title {
+        font-size: 1.2rem;
+    }
+    
+    .neo-close-btn {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+        font-size: 1rem;
+    }
+    
+    .neo-history-container {
+        padding: 15px;
+    }
+    
+    .neo-history-item {
+        padding: 15px;
+        border-width: 2px;
+        box-shadow: 3px 3px 0px var(--neo-black);
+    }
+    
+    .neo-history-month {
+        font-size: 1.1rem;
+    }
+    
+    .neo-history-export-date {
+        font-size: 0.8rem;
+    }
+    
+    .neo-modal-content {
+        margin: 0;
+        max-height: 95vh;
+        border-width: 2px;
+    }
+    
+    .neo-modal-header {
+        padding: 12px 15px;
+    }
+    
+    .neo-modal-title {
+        font-size: 1.2rem;
+    }
+    
+    .neo-modal-body {
+        padding: 15px;
+    }
+    
+    .neo-footer {
+        padding: 15px;
+    }
+    
+    .neo-footer-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes neoSlideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes neoBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.neo-member-card {
+    animation: neoSlideIn 0.5s ease-out;
+}
+
+.neo-btn:hover {
+    animation: neoBounce 0.6s ease;
+}
+
+/* LOADING STATES */
+.neo-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.neo-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--neo-yellow),
+        transparent
+    );
+    animation: neoShimmer 1.5s infinite;
+}
+
+@keyframes neoShimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* ADDITIONAL NEO STYLES */
+.neo-result-name-with-avatar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.neo-member-avatar {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--neo-black);
+    object-fit: cover;
+    filter: contrast(1.2) saturate(1.1);
+}
+
+.neo-name-input-with-avatar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.neo-member-avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+}
+
+.neo-member-avatar-form {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--neo-black);
+    object-fit: cover;
+    transition: all 0.2s ease;
+}
+
+.neo-member-avatar-form:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--neo-red);
+}
+
+.neo-no-history {
+    text-align: center;
+    padding: 60px 30px;
+    color: var(--neo-gray);
+    background: var(--neo-white);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow);
+}
+
+.neo-no-history-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: grayscale(100%);
+}
+
+.neo-no-history h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neo-black);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.neo-no-history p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.neo-history-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.neo-history-month {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--neo-black);
+    text-transform: uppercase;
+}
+
+.neo-history-export-date {
+    font-size: 0.9rem;
+    color: var(--neo-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.neo-results-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.neo-results-members {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.neo-share-section {
+    text-align: center;
+    padding: 30px;
+    background: var(--neo-light-gray);
+    border: 4px solid var(--neo-black);
+    box-shadow: var(--neo-shadow);
+}
+
+.neo-btn-share {
+    background: var(--neo-green);
+    color: var(--neo-black);
+    margin-bottom: 15px;
+}
+
+.neo-share-hint {
+    font-size: 0.9rem;
+    color: var(--neo-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.neo-shared-date {
+    background: var(--neo-white);
+    border: 3px solid var(--neo-black);
+    padding: 12px 16px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--neo-black);
+    text-transform: uppercase;
+    box-shadow: var(--neo-shadow-small);
+}
+
+.neo-btn-back {
+    background: var(--neo-gray);
+    color: var(--neo-white);
+}
+
+/* UTILITY CLASSES */
+.neo-text-center {
+    text-align: center;
+}
+
+.neo-text-uppercase {
+    text-transform: uppercase;
+}
+
+.neo-font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.neo-font-bold {
+    font-weight: 700;
+}
+
+.neo-rotate-1 {
+    transform: rotate(1deg);
+}
+
+.neo-rotate-minus-1 {
+    transform: rotate(-1deg);
+}
+
+.neo-hidden {
+    display: none !important;
+}
+
+.neo-visible {
+    display: block !important;
+} 

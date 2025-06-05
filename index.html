@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÍNH TIỀN LƯƠNG - LỀU XẠ HƯƠNG</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="assets/salary-history-data.js"></script>
+</head>
+<body>
+    <div class="neo-container">
+        <header class="neo-header">
+            <div class="neo-header-content">
+                <h1 class="neo-title">TÍNH TIỀN LƯƠNG</h1>
+                <div class="neo-subtitle-block">
+                    <p class="neo-subtitle">LỀU XẠ HƯƠNG</p>
+                </div>
+            </div>
+            <div class="neo-header-decoration"></div>
+        </header>
+
+        <main class="neo-main">
+            <section class="neo-form-section">
+                <div class="neo-revenue-block">
+                    <label for="totalRevenue" class="neo-label">TỔNG DOANH THU (VNĐ)</label>
+                    <div class="neo-input-wrapper">
+                        <input type="text" id="totalRevenue" class="neo-input" placeholder="1000000 hoặc 500000 + 300000 + 200000" min="0">
+                        <div class="neo-input-shadow"></div>
+                    </div>
+                </div>
+
+                <div class="neo-members-section">
+                    <div class="neo-section-header">
+                        <h3 class="neo-section-title">THÀNH VIÊN</h3>
+                        <button type="button" id="addMemberBtn" class="neo-btn neo-btn-add">
+                            <span class="neo-btn-text">+ THÊM NGƯỜI</span>
+                            <div class="neo-btn-shadow"></div>
+                        </button>
+                    </div>
+                    
+                    <div id="membersContainer" class="neo-members-container">
+                    </div>
+                </div>
+
+                <div class="neo-action-section">
+                    <button type="button" id="calculateBtn" class="neo-btn neo-btn-primary">
+                        <span class="neo-btn-text">💰 TÍNH LƯƠNG NGAY</span>
+                        <div class="neo-btn-shadow"></div>
+                    </button>
+                    <button type="button" id="historyBtn" class="neo-btn neo-btn-secondary">
+                        <span class="neo-btn-text">📈 XEM LỊCH SỬ</span>
+                        <div class="neo-btn-shadow"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="neo-results-section" style="display: none;">
+                <div class="neo-results-header">
+                    <h3 class="neo-results-title">KẾT QUẢ TÍNH LƯƠNG</h3>
+                </div>
+                <div id="resultsContainer" class="neo-results-container">
+                </div>
+                <div class="neo-summary">
+                    <div class="neo-summary-item">
+                        <span class="neo-summary-label">TỔNG DOANH THU:</span>
+                        <span id="summaryRevenue" class="neo-summary-value">0 VNĐ</span>
+                    </div>
+                    <div class="neo-summary-item">
+                        <span class="neo-summary-label">TỔNG CHI PHÍ:</span>
+                        <span id="summaryExpenses" class="neo-summary-value">0 VNĐ</span>
+                    </div>
+                    <div class="neo-summary-item neo-summary-profit">
+                        <span class="neo-summary-label">TỔNG DOANH THU:</span>
+                        <span id="summaryNetProfit" class="neo-summary-value">0 VNĐ</span>
+                    </div>
+                </div>
+                
+                <div class="neo-export-section">
+                    <button type="button" id="exportBtn" class="neo-btn neo-btn-export">
+                        <span class="neo-btn-text">📋 COPY KẾT QUẢ</span>
+                        <div class="neo-btn-shadow"></div>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <div id="historySection" class="neo-history-section">
+            <div class="neo-history-header">
+                <h3 class="neo-history-title">📈 LỊCH SỬ TÍNH LƯƠNG</h3>
+                <button type="button" id="closeHistoryBtn" class="neo-close-btn">
+                    <span>✕</span>
+                    <div class="neo-btn-shadow"></div>
+                </button>
+            </div>
+            <div class="neo-history-content">
+                <div id="historyContainer" class="neo-history-container">
+                </div>
+            </div>
+        </div>
+
+        <div id="historyDetailModal" class="neo-modal">
+            <div class="neo-modal-content">
+                <div class="neo-modal-header">
+                    <div class="neo-modal-title" id="historyDetailTitle">CHI TIẾT LƯƠNG</div>
+                    <button type="button" id="closeHistoryDetailBtn" class="neo-close-btn">
+                        <span>✕</span>
+                        <div class="neo-btn-shadow"></div>
+                    </button>
+                </div>
+                <div id="historyDetailContainer" class="neo-modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="neo-footer">
+        <div class="neo-footer-content">
+            <p class="neo-footer-text">© 2025 NOVA VISION - BẢO LƯU MỌI QUYỀN</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
