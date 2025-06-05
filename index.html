@@ -6,6 +6,11 @@
     <title>TÍNH TIỀN LƯƠNG - LỀU XẠ HƯƠNG</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Magic Mouse Cursor Library -->
+    <script src="https://unpkg.com/magic-mouse@2.3.0/dist/magic-mouse.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/magic-mouse@2.3.0/dist/magic-mouse.css">
+    
     <script src="assets/salary-history-data.js"></script>
 </head>
 <body>
@@ -121,5 +126,77 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cursor-effects.js"></script>
+    
+    <!-- Initialize Magic Mouse Cursor -->
+    <script>
+        // Initialize Magic Mouse with custom settings for neo-brutalism style
+        const magicMouse = new MagicMouse({
+            // Basic cursor settings
+            cursorOuter: 'circle-outer',
+            cursorInner: 'circle-inner',
+            size: 42,
+            speed: 0.3,
+            
+            // Neo-brutalism colors matching your theme
+            colorOuter: '#000000',
+            colorInner: '#FFFF00',
+            
+            // Hover effects
+            hoverEffect: 'pointer-blur',
+            hoverItemMove: false,
+            defaultCursor: false,
+            
+            // Interactive elements
+            dataAttr: 'cursor',
+            
+            // Additional styling
+            outerWidth: 3,
+            innerSize: 8
+        });
+
+        // Custom cursor interactions for neo-brutalism elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add special cursor effects for buttons
+            const buttons = document.querySelectorAll('.neo-btn');
+            buttons.forEach(button => {
+                button.setAttribute('data-cursor', 'pointer');
+                button.addEventListener('mouseenter', function() {
+                    magicMouse.options.colorInner = '#FF0000';
+                    magicMouse.options.size = 60;
+                });
+                button.addEventListener('mouseleave', function() {
+                    magicMouse.options.colorInner = '#FFFF00';
+                    magicMouse.options.size = 42;
+                });
+            });
+
+            // Add hover effects for input fields
+            const inputs = document.querySelectorAll('.neo-input');
+            inputs.forEach(input => {
+                input.setAttribute('data-cursor', 'text');
+                input.addEventListener('mouseenter', function() {
+                    magicMouse.options.colorInner = '#0066FF';
+                });
+                input.addEventListener('mouseleave', function() {
+                    magicMouse.options.colorInner = '#FFFF00';
+                });
+            });
+
+            // Add special effects for links
+            const links = document.querySelectorAll('a, .neo-close-btn');
+            links.forEach(link => {
+                link.setAttribute('data-cursor', 'pointer');
+                link.addEventListener('mouseenter', function() {
+                    magicMouse.options.colorInner = '#FF00FF';
+                    magicMouse.options.size = 50;
+                });
+                link.addEventListener('mouseleave', function() {
+                    magicMouse.options.colorInner = '#FFFF00';
+                    magicMouse.options.size = 42;
+                });
+            });
+        });
+    </script>
 </body>
 </html> 

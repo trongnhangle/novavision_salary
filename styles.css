@@ -1305,9 +1305,160 @@ body {
 }
 
 .neo-hidden {
-    display: none !important;
+    display: none;
 }
 
 .neo-visible {
-    display: block !important;
+    display: block;
+}
+
+/* ===== CUSTOM CURSOR STYLES ===== */
+
+/* Hide default cursor when using custom cursor - only on desktop */
+@media (min-width: 769px) and (hover: hover) {
+    * {
+        cursor: none !important;
+    }
+    
+    body {
+        cursor: none !important;
+    }
+}
+
+/* Custom Magic Mouse cursor styling for neo-brutalism */
+.magic-mouse-cursor-outer {
+    border: 4px solid var(--neo-black) !important;
+    background: transparent !important;
+    box-shadow: var(--neo-shadow-small) !important;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    z-index: 99999 !important;
+}
+
+.magic-mouse-cursor-inner {
+    background: var(--neo-yellow) !important;
+    border: 2px solid var(--neo-black) !important;
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    z-index: 99999 !important;
+}
+
+/* Cursor hover effects for different elements */
+.magic-mouse-cursor-outer.cursor-hover {
+    transform: scale(1.5) !important;
+    border-color: var(--neo-red) !important;
+    box-shadow: var(--neo-shadow) !important;
+}
+
+.magic-mouse-cursor-inner.cursor-hover {
+    background: var(--neo-red) !important;
+    transform: scale(0.8) !important;
+}
+
+/* Special cursor effects for buttons */
+.neo-btn:hover ~ .magic-mouse-cursor-outer,
+.neo-btn:hover + .magic-mouse-cursor-outer {
+    background: var(--neo-red) !important;
+    transform: scale(1.8) !important;
+    border-width: 6px !important;
+}
+
+.neo-btn:hover ~ .magic-mouse-cursor-inner,
+.neo-btn:hover + .magic-mouse-cursor-inner {
+    background: var(--neo-white) !important;
+    border-color: var(--neo-red) !important;
+}
+
+/* Cursor effects for inputs */
+.neo-input:hover ~ .magic-mouse-cursor-outer,
+.neo-input:focus ~ .magic-mouse-cursor-outer {
+    border-color: var(--neo-blue) !important;
+    transform: scale(1.2) rotate(45deg) !important;
+}
+
+.neo-input:hover ~ .magic-mouse-cursor-inner,
+.neo-input:focus ~ .magic-mouse-cursor-inner {
+    background: var(--neo-blue) !important;
+    transform: scale(1.5) !important;
+}
+
+/* Animated cursor trail effect */
+.magic-mouse-cursor-outer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: var(--neo-yellow);
+    border: 2px solid var(--neo-black);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: cursorPulse 1.5s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes cursorPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/* Custom cursor for different interactive elements */
+.neo-header:hover ~ .magic-mouse-cursor-inner {
+    background: var(--neo-purple) !important;
+}
+
+.neo-results-section:hover ~ .magic-mouse-cursor-outer {
+    border-color: var(--neo-green) !important;
+}
+
+.neo-results-section:hover ~ .magic-mouse-cursor-inner {
+    background: var(--neo-green) !important;
+}
+
+/* Cursor click effect */
+.magic-mouse-cursor-outer.cursor-click {
+    animation: cursorClick 0.3s ease-out !important;
+}
+
+@keyframes cursorClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.7);
+        border-width: 8px;
+    }
+    100% {
+        transform: scale(1);
+        border-width: 4px;
+    }
+}
+
+/* Disable cursor on mobile devices */
+@media (max-width: 768px) {
+    .magic-mouse-cursor-outer,
+    .magic-mouse-cursor-inner {
+        display: none !important;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* Special cursor mode for touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .magic-mouse-cursor-outer,
+    .magic-mouse-cursor-inner {
+        display: none !important;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
 } 
